@@ -1,84 +1,61 @@
-h1 {
-    font-size: 18pt;
-}
-
-h2 {
-    font-size: 16pt;
-}
-
-h3 {
-    font-size: 14pt;
-}
-
-h4 {
-    font-size: 14pt;
-}
-
-h1, h2, h3, h4 {
-    font-family: 'Calibri';
-    text-transform: uppercase;
-    font-style: normal;
-    font-weight: normal;
-    color: #ed135a;
-    margin-top: 30px;
-}
-
-hr {
-    display: none;
-}
-
 body {
     font-family: 'Calibri';
     font-size: 11pt;
 }
 
-pre {
-    border: 15px solid #F5FAFC;
-    margin-left: 10px;
-    background-color: #F5FAFC;
-    color: #2e2e2e;
-    font-family: 'Calibri';
-    font-size: 9pt;
+h1 {
+    font-family: 'Calibri Light';
+    font-size: 20pt;
+    font-weight: normal;
 }
 
-li::marker {
-    color: #ed135a !important;
+h2 {
+    font-family: 'Calibri Light';
+    font-size: 20pt;
+    font-style: normal;
+    font-weight: normal;
+}
+
+h3 {
+    font-family: 'Calibri';
+    font-size: 16pt;
+    font-style: normal;
+    font-weight: normal;
+    color: #1e4e79;
+}
+
+h4 {
+    font-family: 'Calibri';
+    font-size: 14pt;
+    font-style: normal;
+    font-weight: normal;
+    color: #2e75b5;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+
+.destaque {
+    background-color: #FFF2CC;
+    padding: 10px;
+    border: 1px solid #D6B656;
 }
 
 table {
-    text-align: justify;
+    border-collapse: collapse;
     width: 100%;
+    background-color: white
 }
 
-table, th, td {
-    border: 1px solid #ffffff;
-    border-collapse: collapse;
+th, td {
+    border: 1px solid #999;
     padding: 6px;
-    text-align: left !important;
-    font-family: 'Calibri';
-}
-
-table {
-    border-collapse: collapse;
 }
 
 th {
-    background-color: #ffffff;
-    color: #ed135a;
+    background-color: white;
     text-align: center;
-    text-transform: uppercase;
-    font-size: 11pt;
-}
-
-tr {
-    background-color: #F5FAFC;
-    font-size: 9pt;
-}
-
-    tr:nth-child(2n) {
-        background-color: #FFFFFF;
-    }
-
-p {
-    text-align: justify;
 }
