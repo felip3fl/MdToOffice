@@ -11,6 +11,7 @@ class Program
     {
 
         var cssStyleCode = File.ReadAllText("Style\\oneNote.css");
+        var oneNoteStyle = true;
 
         foreach (var item in args)
         {
@@ -18,33 +19,39 @@ class Program
             {
                 case "FIAP":
                     cssStyleCode = File.ReadAllText("Style\\fiap.css");
+                    oneNoteStyle = false;
                     break;
             }
         }
 
         //CopiarHtmlParaClipboard(html);
 
-        var MarkDown = File.ReadAllText("Mock\\fiapMarkDownExample1.md");
+        //var MarkDown = File.ReadAllText("Mock\\fiapMarkDownExample1.md");
+        var markDownFromClipboard = Clipboard.GetText(TextDataFormat.Text);
         MarkDown markDown = new MarkDown();
 
-        var HtmlConverted = markDown.ConverterParaHtml(MarkDown);
+        var HtmlConverted = markDown.ConverterParaHtml(markDownFromClipboard);
 
-        HtmlConverted = HtmlConverted.Replace("<hr>", "");
-        HtmlConverted = HtmlConverted.Replace("<th style=\"text-align: right\">", "<th>");
-        HtmlConverted = HtmlConverted.Replace("</p>\n<ul>", "</p>&emsp;<ul>");
-        HtmlConverted = HtmlConverted.Replace("</p>\n<table>", "</p>&emsp;<table>");
-        HtmlConverted = HtmlConverted.Replace("</table>\n<p>", "</table>&emsp;<p>");
-        HtmlConverted = HtmlConverted.Replace("</p>\n<ol>", "</p>&emsp;<ol>");
-        HtmlConverted = HtmlConverted.Replace("</ul>", "</ul>&emsp;");
-        HtmlConverted = HtmlConverted.Replace("</h1>", "</h1>&emsp;");
-        HtmlConverted = HtmlConverted.Replace("</h2>", "</h2>&emsp;");
-        HtmlConverted = HtmlConverted.Replace("</h3>", "</h3>&emsp;");
-        HtmlConverted = HtmlConverted.Replace("</h4>", "</h4>&emsp;");
-        HtmlConverted = HtmlConverted.Replace("<h1>", "&emsp;<BR>&emsp;<h1>");
-        HtmlConverted = HtmlConverted.Replace("<h2>", "&emsp;<BR>&emsp;<h2>");
-        HtmlConverted = HtmlConverted.Replace("<h3>", "&emsp;<BR>&emsp;<h3>");
-        HtmlConverted = HtmlConverted.Replace("<h4>", "&emsp;<BR>&emsp;<h4>");
-        HtmlConverted = HtmlConverted.Replace("&emsp;\n&emsp;<BR>&emsp;", "&emsp;&emsp;");
+        if (oneNoteStyle)
+        {
+            HtmlConverted = HtmlConverted.Replace("<hr>", "");
+            HtmlConverted = HtmlConverted.Replace("<th style=\"text-align: right\">", "<th>");
+            HtmlConverted = HtmlConverted.Replace("</p>\n<ul>", "</p>&emsp;<ul>");
+            HtmlConverted = HtmlConverted.Replace("</p>\n<table>", "</p>&emsp;<table>");
+            HtmlConverted = HtmlConverted.Replace("</table>\n<p>", "</table>&emsp;<p>");
+            HtmlConverted = HtmlConverted.Replace("</p>\n<ol>", "</p>&emsp;<ol>");
+            HtmlConverted = HtmlConverted.Replace("</ul>", "</ul>&emsp;");
+            HtmlConverted = HtmlConverted.Replace("</h1>", "</h1>&emsp;");
+            HtmlConverted = HtmlConverted.Replace("</h2>", "</h2>&emsp;");
+            HtmlConverted = HtmlConverted.Replace("</h3>", "</h3>&emsp;");
+            HtmlConverted = HtmlConverted.Replace("</h4>", "</h4>&emsp;");
+            HtmlConverted = HtmlConverted.Replace("<h1>", "&emsp;<BR>&emsp;<h1>");
+            HtmlConverted = HtmlConverted.Replace("<h2>", "&emsp;<BR>&emsp;<h2>");
+            HtmlConverted = HtmlConverted.Replace("<h3>", "&emsp;<BR>&emsp;<h3>");
+            HtmlConverted = HtmlConverted.Replace("<h4>", "&emsp;<BR>&emsp;<h4>");
+            HtmlConverted = HtmlConverted.Replace("&emsp;\n&emsp;<BR>&emsp;", "&emsp;&emsp;");
+        }
+
 
         string html = """
         <!DOCTYPE html>
