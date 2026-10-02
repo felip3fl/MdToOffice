@@ -13,6 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Mock\fiapMarkDownExample1.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Style\fiap.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

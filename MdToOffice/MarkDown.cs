@@ -16,7 +16,7 @@ public class MarkDown
         var blocos = new LeitorDeBlocos(cursor).LerTodos();
         var corpo = string.Join("\n", blocos);
 
-        return new DocumentoHtml(corpo).Renderizar();
+        return corpo;
     }
 }
 
