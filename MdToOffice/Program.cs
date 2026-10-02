@@ -37,7 +37,7 @@ class Program
             HtmlConverted = HtmlConverted.Replace("<hr>", "");
             HtmlConverted = HtmlConverted.Replace("<th style=\"text-align: right\">", "<th>");
             HtmlConverted = HtmlConverted.Replace("</p>\n<ul>", "</p>&emsp;<ul>");
-            HtmlConverted = HtmlConverted.Replace("</p>\n<table>", "</p>&emsp;<table>");
+            //HtmlConverted = HtmlConverted.Replace("</p>\n<table>", "</p>&emsp;<table>");
             HtmlConverted = HtmlConverted.Replace("</table>\n<p>", "</table>&emsp;<p>");
             HtmlConverted = HtmlConverted.Replace("</p>\n<ol>", "</p>&emsp;<ol>");
             HtmlConverted = HtmlConverted.Replace("</ul>", "</ul>&emsp;");
@@ -50,6 +50,8 @@ class Program
             HtmlConverted = HtmlConverted.Replace("<h3>", "&emsp;<BR>&emsp;<h3>");
             HtmlConverted = HtmlConverted.Replace("<h4>", "&emsp;<BR>&emsp;<h4>");
             HtmlConverted = HtmlConverted.Replace("&emsp;\n&emsp;<BR>&emsp;", "&emsp;&emsp;");
+            HtmlConverted = HtmlConverted.Replace("<table>", "<ul><table>");
+            HtmlConverted = HtmlConverted.Replace("</table>", "</table></ul>");
         }
 
 
