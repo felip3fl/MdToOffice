@@ -42,7 +42,7 @@ A estimativa mensal para utilização da OCI é:
 
 | Indicador | On-Premise | OCI |
 |---|---:|---:|
-| Custo mensal | R$ 5.000.000,00 | R$ 3.688.711,62 |
+| **Custo mensal** | R$ 5.000.000,00 | R$ 3.688.711,62 |
 | Custo anual | R$ 60.000.000,00 | R$ 44.264.539,46 |
 | Custo em 3 anos | R$ 180.000.000,00 | R$ 132.793.618,39 |
 
