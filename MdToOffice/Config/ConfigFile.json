@@ -1,0 +1,86 @@
+﻿{
+  "Config":
+  [
+    {
+      "Name": "all",
+      "RemoveTag": [
+        {
+          "Replace": "<hr>",
+          "To": ""
+        },
+        {
+          "Replace": "<th style=\"text-align: right\">",
+          "To": "<th>"
+        },
+        {
+          "Replace": "</p>\n<ul>",
+          "To": "</p>&emsp;<ul>"
+        },
+        {
+          "Replace": "</table>\n<p>",
+          "To": "</table>&emsp;<p>"
+        },
+        {
+          "Replace": "</p>\n<ol>",
+          "To": "</p>&emsp;<ol>"
+        },
+        {
+          "Replace": "</ul>",
+          "To": "</ul>&emsp;"
+        },
+        {
+          "Replace": "</h1>",
+          "To": "</h1>&emsp;"
+        },
+        {
+          "Replace": "</h2>",
+          "To": "</h2>&emsp;"
+        },
+        {
+          "Replace": "</h3>",
+          "To": "</h3>&emsp;"
+        },
+        {
+          "Replace": "</h4>",
+          "To": "</h4>&emsp;"
+        },
+        {
+          "Replace": "<h1>",
+          "To": "&emsp;<BR>&emsp;<h1>"
+        },
+        {
+          "Replace": "<h2>",
+          "To": "&emsp;<BR>&emsp;<h2>"
+        },
+        {
+          "Replace": "<h3>",
+          "To": "&emsp;<BR>&emsp;<h3>"
+        },
+        {
+          "Replace": "<h4>",
+          "To": "&emsp;<BR>&emsp;<h4>"
+        },
+        {
+          "Replace": "&emsp;\n&emsp;<BR>&emsp;",
+          "To": "&emsp;&emsp;"
+        },
+        {
+          "Replace": "<table>",
+          "To": "<ul><table>"
+        },
+        {
+          "Replace": "</table>",
+          "To": "</table></ul>"
+        }
+      ]
+    },
+    {
+      "Name": "FIAP",
+      "RemoveTag": []
+    },
+    {
+      "Name": "ONENOTE",
+      "RemoveTag": []
+    }
+  ]
+}
