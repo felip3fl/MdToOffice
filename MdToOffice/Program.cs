@@ -13,7 +13,8 @@ class Program
 
         var cssStyleCode = File.ReadAllText("Style\\oneNote.css");
         var configFile = File.ReadAllText("Config\\ConfigFile.json");
-        var config = System.Text.Json.JsonSerializer.Deserialize<RootConfig>(configFile);
+        var allProfileConfig = System.Text.Json.JsonSerializer.Deserialize<RootConfig>(configFile);
+        List<Config> profileConfig = [GetProfileConfig(allProfileConfig, "all")];
 
         foreach (var item in args)
         {
@@ -21,6 +22,7 @@ class Program
             {
                 case "FIAP":
                     cssStyleCode = File.ReadAllText("Style\\fiap.css");
+                    profileConfig.Add(GetProfileConfig(allProfileConfig, item.ToUpper()));
                     break;
             }
         }
@@ -32,13 +34,12 @@ class Program
         MarkDown markDown = new MarkDown();
 
         var HtmlConverted = markDown.ConverterParaHtml(markDownFromClipboard);
+        string updatedHtmlConverted = "";
 
-
-        foreach (var item in config.Config[0].RemoveTag)
+        foreach (var item in profileConfig)
         {
-            HtmlConverted = HtmlConverted.Replace(item.Replace, item.To);
+            updatedHtmlConverted = SubstituirTagsHtml(HtmlConverted, item.RemoveTag);
         }
-        
 
         string html = """
         <!DOCTYPE html>
@@ -54,8 +55,11 @@ class Program
 
         <body>
 
-       """ + HtmlConverted + """
+       """ + updatedHtmlConverted + """
         
+        <p><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></p>
+        <p><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></p>
+        <p><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></p>
 
         </body>
         </html>
@@ -67,7 +71,22 @@ class Program
         File.WriteAllText("Temp/index.html", html);
     }
 
+    static Config GetProfileConfig(RootConfig rootConfig, string profileName)
+    {
+        var profileConfig = rootConfig.Config.FirstOrDefault(c => c.Name.Equals(profileName, StringComparison.OrdinalIgnoreCase));
+        return profileConfig;
+    }
 
+    static string SubstituirTagsHtml(string htmlBody, List<RemoveTag> config)
+    {
+        string HtmlConverted = htmlBody;
+        foreach (var item in config)
+        {
+            HtmlConverted = HtmlConverted.Replace(item.Replace, item.To);
+        }
+
+        return HtmlConverted;
+    }
 
     static void CopiarHtmlParaClipboard(string html)
     {
