@@ -34,16 +34,11 @@ class Program
         MarkDown markDown = new MarkDown();
 
         var HtmlConverted = markDown.ConverterParaHtml(markDownFromClipboard);
-        string updatedHtmlConverted = "";
 
-        foreach (var item in profileConfig)
-        {
-            updatedHtmlConverted = SubstituirTagsHtml(HtmlConverted, item.RemoveTag);
-        }
 
         string html = """
         <!DOCTYPE html>
-        <html lang="pt-br">
+        <html lang="pt-BR" xml:lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml">
         <head>
             <style>
        
@@ -53,9 +48,8 @@ class Program
             </style>
         </head>
 
-        <body>
-
-       """ + updatedHtmlConverted + """
+        <body lang='pt-BR'>
+       """ + HtmlConverted + """
         
         <p><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></p>
         <p><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></p>
@@ -64,6 +58,11 @@ class Program
         </body>
         </html>
         """;
+
+        foreach (var item in profileConfig)
+        {
+            html = SubstituirTagsHtml(html, item.RemoveTag);
+        }
 
         CopiarHtmlParaClipboard(html);
 

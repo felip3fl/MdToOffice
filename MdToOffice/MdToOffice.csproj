@@ -9,15 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Style\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Config\ConfigFile.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Mock\fiapMarkDownExample1.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Style\fiap2.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Style\fiap.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

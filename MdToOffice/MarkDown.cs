@@ -433,9 +433,13 @@ internal sealed class ConversorDeTabela : IConversorDeBloco
             return string.Empty;
 
         var linhas = new List<string>();
+        var inpar = false;
         foreach (var linhaDoCorpo in linhasDoCorpo)
         {
-            linhas.Add(MontarLinha(linhaDoCorpo, "td", alinhamentos));
+            inpar = !inpar;
+            var tag = inpar ? "td class=\"inpar\"" : "td class=\"par\"";
+            tag = tag + " lang=\"pt-BR\"";
+            linhas.Add(MontarLinha(linhaDoCorpo, tag, alinhamentos));
         }
 
         var conteudo = string.Join("\n", linhas);
