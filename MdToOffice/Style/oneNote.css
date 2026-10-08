@@ -44,10 +44,9 @@ h1, h2, h3, h4 {
 }
 
 table {
-    border-collapse: collapse;
+    border: 1px solid #999;
     width: 100%;
     background-color: white;
-    
 }
 
 th, td {

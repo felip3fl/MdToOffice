@@ -71,16 +71,35 @@
         {
           "Replace": "</table>",
           "To": "</table></ul>"
+        },
+        {
+          "Replace": "'>&emsp;<BR>&emsp;",
+          "To": "'>"
+        },
+        {
+          "Replace": "<blockquote>",
+          "To": "<ul><table><td>"
+        },
+        {
+          "Replace": "</blockquote>",
+          "To": "</td></table></ul>&emsp;"
         }
       ]
     },
     {
       "Name": "FIAP",
-      "RemoveTag": []
+      "RemoveTag": [
+        {
+          "Replace": "<hr>",
+          "To": ""
+        }
+      ]
     },
     {
       "Name": "ONENOTE",
-      "RemoveTag": []
+      "RemoveTag": [
+
+      ]
     }
   ]
 }
