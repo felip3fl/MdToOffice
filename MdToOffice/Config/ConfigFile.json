@@ -29,6 +29,10 @@
           "To": "</ul>&emsp;"
         },
         {
+          "Replace": "</ol>",
+          "To": "</ol>&emsp;"
+        },
+        {
           "Replace": "</h1>",
           "To": "</h1>&emsp;"
         },
@@ -83,6 +87,14 @@
         {
           "Replace": "</blockquote>",
           "To": "</td></table></ul>&emsp;"
+        },
+        {
+          "Replace": "<pre>",
+          "To": "<ul><table class='code'><td><pre>"
+        },
+        {
+          "Replace": "</pre>",
+          "To": "</pre></td></table class='code'></ul>&emsp;"
         }
       ]
     },

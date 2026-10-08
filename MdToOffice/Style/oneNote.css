@@ -10,13 +10,6 @@ h1 {
 }
 
 h2 {
-    font-family: 'Calibri Light';
-    font-size: 20pt;
-    font-style: normal;
-    font-weight: normal;
-}
-
-h3 {
     font-family: 'Calibri';
     font-size: 16pt;
     font-style: normal;
@@ -24,12 +17,20 @@ h3 {
     color: #1e4e79;
 }
 
-h4 {
+h3 {
     font-family: 'Calibri';
     font-size: 14pt;
     font-style: normal;
     font-weight: normal;
     color: #2e75b5;
+}
+
+h4 {
+    font-family: 'Calibri';
+    font-size: 12pt;
+    font-style: italic;
+    font-weight: normal;
+    color: #5b9bd5;
 }
 
 h1, h2, h3, h4 {
@@ -57,4 +58,9 @@ th, td {
 th {
     background-color: white;
     text-align: center;
+}
+
+.code {
+    font-family: 'Consolas';
+    font-size: 11pt;
 }
