@@ -1,4 +1,4 @@
-﻿# Análise Financeira da Migração para Oracle Cloud Infrastructure (OCI)
+﻿# TESTE TESTE Análise Financeira da Migração para Oracle Cloud Infrastructure (OCI)
 
 ## 1. Custos estimados pós-migração e diferenças financeiras
 
@@ -415,22 +415,6 @@ Monitoramento
 Ajustes
 ```
 
----
-
-## 5.2 Controle de capacidade
-
-A infraestrutura deve possuir métricas para acompanhar:
-
-- CPU;
-- Memória;
-- Storage;
-- Rede;
-- Utilização dos clusters;
-- Utilização dos bancos;
-- Capacidade disponível;
-- Picos de utilização.
-
-A capacidade deve ser revisada periodicamente para acompanhar a evolução da demanda.
 
 ---
 
