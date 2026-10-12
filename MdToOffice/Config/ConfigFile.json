@@ -95,6 +95,10 @@
         {
           "Replace": "</pre>",
           "To": "</pre></td></table class='code'></ul>&emsp;"
+        },
+        {
+          "Replace": "</ul>&emsp;&emsp;<h",
+          "To": "</ul>&emsp;<BR>&emsp;<h"
         }
       ]
     },
