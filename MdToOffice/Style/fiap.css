@@ -51,19 +51,22 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #ffffff;
-    border-collapse: collapse;
     padding: 6px;
     text-align: left !important;
     font-family: 'Calibri';
 }
 
 table {
-    border-collapse: collapse;
+    
+}
+
+td {
+    
 }
 
 th {
-    background-color: #ffffff;
+    
+    
     color: #ed135a;
     text-align: center;
     text-transform: uppercase;
@@ -71,14 +74,15 @@ th {
 }
 
 tr {
-    background-color: #F5FAFC;
     font-size: 9pt;
 }
 
-    tr:nth-child(2n) {
-        background-color: #FFFFFF;
-    }
 
 p {
     text-align: justify;
 }
+
+.inpar {
+    background-color: #F5FAFC;
+}
+

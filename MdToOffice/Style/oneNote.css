@@ -10,6 +10,12 @@ h1 {
 }
 
 h2 {
+    font-family: 'Calibri Light';
+    font-size: 20pt;
+    font-weight: normal;
+}
+
+h3 {
     font-family: 'Calibri';
     font-size: 16pt;
     font-style: normal;
@@ -17,7 +23,7 @@ h2 {
     color: #1e4e79;
 }
 
-h3 {
+h4 {
     font-family: 'Calibri';
     font-size: 14pt;
     font-style: normal;
@@ -25,7 +31,7 @@ h3 {
     color: #2e75b5;
 }
 
-h4 {
+h5 {
     font-family: 'Calibri';
     font-size: 12pt;
     font-style: italic;
