@@ -10,6 +10,9 @@ class Program
     [STAThread]
     static void Main(string[] args)
     {
+        var version = System.Reflection.Assembly.GetExecutingAssembly()
+            .GetName().Version?.ToString(3) ?? "1.0.0";
+        Console.Title = $"MdToOffice v{version}";
 
         var cssStyleCode = File.ReadAllText("Style\\oneNote.css");
         var configFile = File.ReadAllText("Config\\ConfigFile.json");
@@ -22,6 +25,10 @@ class Program
             {
                 case "FIAP":
                     cssStyleCode = File.ReadAllText("Style\\fiap.css");
+                    profileConfig.Add(GetProfileConfig(allProfileConfig, item.ToUpper()));
+                    break;
+                case "FIAP2":
+                    cssStyleCode = File.ReadAllText("Style\\fiap2.css");
                     profileConfig.Add(GetProfileConfig(allProfileConfig, item.ToUpper()));
                     break;
             }
@@ -51,7 +58,6 @@ class Program
         <body lang='pt-BR'>
        """ + HtmlConverted + """
         
-        <p><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></p>
         <p><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></p>
         <p><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></p>
         <p><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></p>

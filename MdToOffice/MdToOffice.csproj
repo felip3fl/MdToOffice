@@ -1,13 +1,25 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net10.0-windows7.0</TargetFramework>
-	<UseWindowsForms>true</UseWindowsForms>
+    <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Version>1.0.19</Version>
   </PropertyGroup>
-
+  <Target Name="IncrementPatchVersion" AfterTargets="Build" Condition="'$(Configuration)' == 'Release' Or '$(Configuration)' == 'Debug'">
+    <PropertyGroup>
+      <_VersionParts>$(Version.Split('.'))</_VersionParts>
+      <_Major>$(Version.Split('.')[0])</_Major>
+      <_Minor>$(Version.Split('.')[1])</_Minor>
+      <_Patch>$(Version.Split('.')[2])</_Patch>
+      <_NewPatch>$([MSBuild]::Add($([System.Int32]::Parse($(_Patch))), 1))</_NewPatch>
+      <_NewVersion>$(_Major).$(_Minor).$(_NewPatch)</_NewVersion>
+    </PropertyGroup>
+    <Message Text="Build succeeded — bumping version: $(Version) → $(_NewVersion)" Importance="High" />
+    <WriteLinesToFile File="$(MSBuildProjectFullPath)" Overwrite="false" Condition="false" />
+    <XmlPoke XmlInputPath="$(MSBuildProjectFullPath)" Query="/Project/PropertyGroup/Version" Value="$(_NewVersion)" />
+  </Target>
   <ItemGroup>
     <None Update="Config\ConfigFile.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -28,5 +40,4 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
 </Project>
