@@ -5,7 +5,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>1.0.19</Version>
+    <Version>1.0.65</Version>
   </PropertyGroup>
   <Target Name="IncrementPatchVersion" AfterTargets="Build" Condition="'$(Configuration)' == 'Release' Or '$(Configuration)' == 'Debug'">
     <PropertyGroup>
@@ -26,6 +26,9 @@
     </None>
     <None Update="Mock\fiapMarkDownExample1.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Style\abnt.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Style\fiap2.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
