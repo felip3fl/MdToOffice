@@ -31,6 +31,10 @@ class Program
                     cssStyleCode = File.ReadAllText("Style\\fiap2.css");
                     profileConfig.Add(GetProfileConfig(allProfileConfig, item.ToUpper()));
                     break;
+                case "ABNT":
+                    cssStyleCode = File.ReadAllText("Style\\abnt.css");
+                    profileConfig.Add(GetProfileConfig(allProfileConfig, item.ToUpper()));
+                    break;
             }
         }
 
