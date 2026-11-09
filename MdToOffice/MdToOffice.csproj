@@ -5,7 +5,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>1.0.65</Version>
+    <Version>1.0.76</Version>
   </PropertyGroup>
   <Target Name="IncrementPatchVersion" AfterTargets="Build" Condition="'$(Configuration)' == 'Release' Or '$(Configuration)' == 'Debug'">
     <PropertyGroup>
